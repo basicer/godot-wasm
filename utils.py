@@ -10,6 +10,25 @@ WASMER_VER_DEFAULT = "v6.0.1"
 WASMTIME_BASE_URL = "https://github.com/bytecodealliance/wasmtime/releases/download/{0}/wasmtime-{0}-{1}-c-api.{2}"
 WASMTIME_VER_DEFAULT = "v36.0.2"
 
+WAMR_DEFINES = [
+    ("WASM_ENABLE_INTERP","1"),
+    ("WASM_ENABLE_FAST_INTERP","1"),
+    ("WASM_ENABLE_SHARED_HEAP","0"),
+    ("WASM_ENABLE_SHARED_MEMORY","0"),
+    ("WASM_ENABLE_LIBC_WASI","0"),
+    ("WASM_ENABLE_BULK_MEMORY","1"),
+    ("WASM_ENABLE_INVOKE_NATIVE","0"),
+    ("WASM_ENABLE_MULTI_MODULE","0"),
+    ("WASM_ENABLE_TAGS","1"),
+    ("WASM_ENABLE_AOT","0"),
+    ("WASM_ENABLE_GC","0"),
+    ("WASM_ENABLE_WASM_CACHE","0"),
+    ("BH_MALLOC","wasm_runtime_malloc"),
+    ("BH_FREE","wasm_runtime_free"),
+    ("WASM_ENABLE_JIT","0"),
+    ("WASM_ENABLE_FAST_JIT","0"),
+    ("WASM_ENABLE_SIMDE","0")
+]
 
 def _validate_version(v):
     """Validate semver string"""
